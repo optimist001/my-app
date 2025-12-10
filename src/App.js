@@ -1,25 +1,74 @@
-import logo from './logo.svg';
 import './App.css';
+import profilePix from './profile.jpeg';
+// import Card from './Components/Card'
 
-function App() {
+function Profile({person, size = 70}) {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <section className = 'profile'>
+            <img
+                className = 'profilePix'
+                src = {profilePix}
+                alt = {person.name}
+                width = {size}
+                height = {size}
+            />
+            <p><b>{person.name}</b></p>
+            <p><b>{person.profession}</b></p>
+            <p> {person.skills.join(', ')} </p>
+            <div className = 'btns'>
+              <button>Message</button>
+              <button>Follow</button>
+            </div>
+        </section>
+);
 }
 
-export default App;
+export default function Card() {
+  return (
+    <div className = 'container'>
+      <h1 className = 'title'>Our Teams</h1>
+      <section className = 'cards'>
+        <div className = 'card'>
+          <Profile person = {{
+            name: 'Tiamiyu Ibraheem',
+            profession: 'Web Developer',
+            skills: [
+              'html',
+              'css',
+              'javascript'
+            ],
+          }}/>
+        </div>
+
+        <div className = 'card'>
+          <Profile person = {{
+            name: 'Olakitan Ibraheem',
+            profession: 'Data Analyst',
+            skills: [
+              'Python',
+              'C#',
+              'Mysql'
+            ],
+          }}/>
+        </div>
+        
+        <div className = 'card'>
+          <Profile person = {{
+            name: 'Optimist Ibraheem',
+            profession: 'Mobile App Developer',
+            skills: [
+              'html',
+              'css',
+              'javascript',
+              'React.js',
+              'React Native'
+            ],
+          }}/>
+        </div>
+
+      </section>
+
+    </div>
+);
+}

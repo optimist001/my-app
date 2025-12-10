@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body{
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(var(--accent-color),var(--secondary-color));
+}
+:root{
+  --light-gray:#f5f7fa;
+  --white: #ffffff;
+  --text-color:#8a8a8a;
+  --primary-color:#1a1a1a;
+  --accent-color:#2563eb;
+  --secondary-color:#947922;
+}
+
+.container {
+  width: 90%;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.title{
+  font-size: 2.4rem;
+  color:var(--white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profilePix{
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+}
+
+.profile{
+  border: 1.5px solid var(--light-gray);
+  border-radius: 12px;
+  text-align: center;
+  padding: 2rem;
+  backdrop-filter: blur(25px);
+}
+
+.btns{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btns button{
+  width: calc(100%/2);
+  padding: .75rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: var(--secondary-color);
+  color: var(--white);
+  transition: .3s ease-in;
+}
+
+.btns button:hover{
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid var(--white);
+}
+
+.btns button:first-child{
+  background: transparent;
+  color: var(--white);
+  border: 1.5px solid var(--white);
+}
+
+.btns button:first-child:hover{
+  background: var(--secondary-color);
+  border: 1.5px solid var(--white);
 }
